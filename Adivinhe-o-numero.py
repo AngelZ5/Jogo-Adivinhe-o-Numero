@@ -41,7 +41,33 @@ if Iniciador == "s":
                     SuaResposta2 = int(input(""))
                     if SuaResposta2 == Resposta2:
                         print("Você ganhou na segunda fase!, parabéns.")
-                        break
+                        print("Gostaria de ir para a terceira fase? S/N")
+                        TerceiroIniciador = input("").lower()
+                        if TerceiroIniciador == "s":
+                            print("A terceira fase vai iniciar em...")
+                            time.sleep(0.7)
+                            print("3")
+                            time.sleep(0.7)
+                            print("2")
+                            time.sleep(0.7)
+                            print("1")
+                            Resposta3 = random.randint(1, 200)
+                            Chances3 = 10
+                            print("Adivinhe o número entre 1 e 200")
+                            
+                            while Chances3 > 0:
+                                SuaResposta3 = int(input(""))
+                                if SuaResposta3 == Resposta3:
+                                    print("Você ganhou na terceira fase!, parabéns.")
+                                    break
+                                elif SuaResposta3 < Resposta3:
+                                    print("Chute mais alto")
+                                elif SuaResposta3 > Resposta3:
+                                    print("Chute mais baixo")
+                                Chances3 -= 1
+                            if Chances3 == 0:
+                                print("FIM DE JOGO")
+                                break
                     elif SuaResposta2 < Resposta2:
                         print("Chute mais alto")
                     elif SuaResposta2 > Resposta2:
@@ -66,4 +92,3 @@ if Iniciador == "s":
 elif Iniciador == "n":
     print("Fechando jogo")
     time.sleep(1.5)
-
